@@ -61,6 +61,8 @@ These two rules also present Left recursion. To understand what is Left Recursio
 
 We can visualize it with this tree.
 
+![Image3](LeftRecursion_problem.drawio.png)
+
 #### Analyze
 By analyzing the previous grammar, we come to a realiza
 - Ambiguity elimination process
