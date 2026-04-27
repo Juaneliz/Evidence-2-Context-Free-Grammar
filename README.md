@@ -50,7 +50,7 @@ Image 1
 Image 2
 
 As you can see, both trees represent the same sentence. The difference is how we build the grammar around them. 
-With this in mind, we need to analyze our grammar ni look for ambiguity and left recursion. By eliminating this, we can make sure that there is only one way to develop a sentence. The situation in which we create ambiguity is the following.  
+With this in mind, we need to analyze our grammar in look for ambiguity and left recursion. By eliminating this, we can make sure that there is only one way to develop a sentence. The rules that generate ambiguity are the following.  
 
 - NP -> NP Conj NP
 - VP -> VP Conj VP
@@ -63,11 +63,63 @@ We can visualize it with this tree.
 
 ![Image3](LeftRecursion_problem.drawio.png)
 
-#### Analyze
-By analyzing the previous grammar, we come to a realiza
+### Analyze
+By analyzing the previous grammar, we come to a realization that we need to eliminate both ambiguity and left Recursion in these rules.
+
 - Ambiguity elimination process
+#### Case 1: VP -> VP Conj VP
+
+Original rule:
+VP → VP Conj VP | V | V PP | V NP | V NP PP
+
+Applying the elimination pattern:
+A  → A α | β  becomes  A → β A' and A' → α A' | ε
+
+Transformed rules:
+VP  → V VP' | V PP VP' | V NP VP' | V NP PP VP'
+VP' → Conj VP VP' | ε
+
+#### Case 2 NP -> NP Conj NP
+Applying the same elimination pattern
+
+Original rule:
+NP → NP Conj NP | Det Nom
+
+Transformed rules:
+NP  → Det Nom NP'
+NP' → Conj NP NP' | ε
+
 - Left Recursion Elimination
-Include the corresponding syntactic trees to show the changes in the grammar.
+
+Left recursion was eliminated during the process of ambiguity elimination asswell. 
+This is because both VP and NP stop appearing in a recursive way at the start of a rule.
+
+#### Syntatic trees for both rules in question
+For the rule of NP modified the tree looks like this.
+![ Imagen 4](Arbol_NP_solution.drawio.png)
+Imagen solucion NP
+![ Imagen 5](Solucion_VP.drawio.png)
+Imagen solucion VP
+#### Correct grammar
+```python
+S    → NP VP
+NP   → Det Nom NP'
+NP'  → Conj NP NP' | ε
+Nom  → Adj Nom | N
+VP   → V VP' | V PP VP' | V NP VP' | V NP PP VP'
+VP'  → Conj VP VP' | ε
+PP   → Prep NP
+
+Det  → 'der' | 'die' | 'das' | 'ein' | 'eine'
+Adj  → 'fleißige' | 'kleine' | 'schwere' | 'neue' | 
+        'intelligent' | 'interessant' | 'alt'
+N    → 'Schüler' | 'Lehrerin' | 'Buch' | 'Klasse' | 
+        'Klassenzimmer' | 'Rucksack' | 'Kurs'
+V    → 'lesen' | 'schreibt' | 'ist' | 'erklärt' | 
+        'macht' | 'machen'
+Prep → 'in' | 'mit' | 'auf'
+Conj → 'und' | 'oder'
+```
 
 ### Implementation and tests
 Implement a tester for your grammar using a natural language toolkit or library such as nltk in python,
