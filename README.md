@@ -42,7 +42,7 @@ For the visualization of the ambiguity and left recursion with our grammar the s
 
 With this sentence there are two type of trees that can be made according to our grammar.
 
-![Imagen 1: Possible tree for sentence structure](Arboles.drawio(2).png)
+![Imagen 1: Possible tree for sentence structure](Arboles_previo.drawio.png)
 
 ![Imagen2:Possible tree for sentence structure](Arboles2_previo.drawio.png)
 
