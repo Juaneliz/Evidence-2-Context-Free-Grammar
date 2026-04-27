@@ -6,7 +6,7 @@ The language chosen  is the German language. More precisely, the language specif
 #### Language Structure
 According to (Klein, 2025), the golden German rule in sentence structure is that the verb is the second element in a sentence. But that does not mean that it needs to be the second word. With this in mind, German structure tends to be a bit confusing. <strong> Many sentences can mean the same, but will be with a different structure</strong>. For example:
 - Der Schüler liest das Buch
-- Das Buch liest der Schüler.
+- Das Buch liest der Schüler.<br>
 That is why this language is perfect for this project. By eliminating ambiguity, this language will change from an ambiguos natural language to a properly defined grammar. So that we can develop a parser to process the grammar developed.
 
 #### Rules
