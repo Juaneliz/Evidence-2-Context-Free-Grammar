@@ -33,8 +33,7 @@ N   -> 'Schüler' | 'Lehrerin' | 'Buch' | 'Klasse' | 'Klassenzimmer'|'Rucksack'|
 V   -> 'lesen' | 'schreibt' | 'ist' | 'erklärt' | 'macht'|'machen'
 Prep -> 'in' | 'mit' | 'auf'
 Conj -> 'und' | 'oder'
-
-```python
+```
 As you can see, the grammar can be segmented in several types of sentence structures. Which according to (GeeksforGeeks, 2025) could be interpreted as a context Free grammar (CFG). It says that on the left side it can only be a Variable in there, not a terminal, however the right side can be either non terminal or terminal.
 
 For the visualization of the ambiguity and left recursion with our grammar the sentence will  be the following.
