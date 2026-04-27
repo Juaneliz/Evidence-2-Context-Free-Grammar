@@ -102,26 +102,26 @@ Imagen solucion NP
 Imagen solucion VP
 #### Correct grammar
 ```python
-S    → NP VP
-NP   → Det Nom NP'
-NP'  → Conj NP NP' | ε
-Nom  → Adj Nom | N
-VP   → V VP' | V PP VP' | V NP VP' | V NP PP VP'
-VP'  → Conj VP VP' | ε
-PP   → Prep NP
+S -> NP VP
+NP -> Det Nom NP2
+NP2 -> Conj NP NP2 | ε
+Nom -> Adj Nom | N
+VP -> V VP2 | V PP VP2 | V NP VP2 | V NP PP VP2
+VP2 -> Conj VP VP2 | ε
+PP -> Prep NP
+Det -> 'der' | 'die' | 'das' | 'ein' | 'eine' | 'dem'
+Adj -> 'fleißige' | 'kleine' | 'schwere' | 'neue' | 'intelligent' | 'interessant' | 'alt'
+N -> 'Schüler' | 'Lehrerin' | 'Buch' | 'Klasse' | 'Klassenzimmer' | 'Rucksack' | 'Kurs'
+V -> 'liest' | 'schreibt' | 'ist' | 'erklärt' | 'macht'
+Prep -> 'in' | 'mit' | 'auf'
+Conj -> 'und' | 'oder'
 
-Det  → 'der' | 'die' | 'das' | 'ein' | 'eine'
-Adj  → 'fleißige' | 'kleine' | 'schwere' | 'neue' | 
-        'intelligent' | 'interessant' | 'alt'
-N    → 'Schüler' | 'Lehrerin' | 'Buch' | 'Klasse' | 
-        'Klassenzimmer' | 'Rucksack' | 'Kurs'
-V    → 'lesen' | 'schreibt' | 'ist' | 'erklärt' | 
-        'macht' | 'machen'
-Prep → 'in' | 'mit' | 'auf'
-Conj → 'und' | 'oder'
 ```
 
 ### Implementation and tests
+The grammar was implemented throguh the library NLTK in python
+
+
 Implement a tester for your grammar using a natural language toolkit or library such as nltk in python,
 You can choose a substitute but you should schedule an appointment to make sure I can run it before the hand-in.
 If I can't compile/run it, you will get 0 as a grade.
