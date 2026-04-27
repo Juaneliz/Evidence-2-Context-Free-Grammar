@@ -43,12 +43,26 @@ For the visualization of the ambiguity and left recursion with our grammar the s
 With this sentence there are two type of trees that can be made according to our grammar.
 
 ![Imagen 1: Possible tree for sentence structure](Arboles_previo.drawio.png)
+Image 1
 
 ![Imagen2:Possible tree for sentence structure](Arboles2_previo.drawio.png)
 
+Image 2
 
+As you can see, both trees represent the same sentence. The difference is how we build the grammar around them. 
+With this in mind, we need to analyze our grammar ni look for ambiguity and left recursion. By eliminating this, we can make sure that there is only one way to develop a sentence. The situation in which we create ambiguity is the following.  
 
+- NP -> NP Conj NP
+- VP -> VP Conj VP
 
+The previous trees shown were especifically showing the ambiguity in VP Conj VP.
+These two rules also present Left recursion. To understand what is Left Recursion I search through Geeks for Geeks:
+- *"Grammar of the form S ⇒ S | a | b is called left recursive where S is any non Terminal and a and b are any set of terminals."(GeeksforGeeks, 2025) *
+
+We can visualize it with this tree.
+
+#### Analyze
+By analyzing the previous grammar, we come to a realiza
 - Ambiguity elimination process
 - Left Recursion Elimination
 Include the corresponding syntactic trees to show the changes in the grammar.
@@ -70,4 +84,6 @@ Explain the time implications of the different levels and provide a brief exampl
 - Klein, A. (2025, March 22). Mastering German Word Order: An Absolute Beginner’s Guide. LearnOutLive. https://learnoutlive.com/german-word-order-guide-for-beginners/
 
 - GeeksforGeeks. (2025, July 23). What is ContextFree Grammar? GeeksforGeeks. https://www.geeksforgeeks.org/theory-of-computation/what-is-context-free-grammar/
+
+- GeeksforGeeks. (2025, July 12). Removing direct and indirect left recursion in a grammar. GeeksforGeeks. https://www.geeksforgeeks.org/dsa/removing-direct-and-indirect-left-recursion-in-a-grammar/
 
