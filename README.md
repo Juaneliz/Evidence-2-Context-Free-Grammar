@@ -119,21 +119,50 @@ Conj -> 'und' | 'oder'
 ```
 
 ### Implementation and tests
-The grammar was implemented throguh the library NLTK in python
+The grammar was implemented throguh the library NLTK in python. The program functions as following:
+- A function is created with two variables
+- First variable is the sentence, second one is what you expect the result.
+- True or false are the options for the second variable.
+- The function receives the sentence and split it into tokens. This is for the parser to compare between the grammar previously made and the sentence.
+- The tree will be formed by each prasing process of the tokens in the sentence.
+- Then the result will present the sentence with a message of pass or fail if the assumption you did was correct or no.
+- Finally trees show if the sentence is accepted.
 
+Here are the sentences 
+# Sentences that SHOULD be accepted
+print("=== VALID SENTENCES ===")
+test_sentence("der Schüler schreibt", True)
+test_sentence("die Lehrerin erklärt das Buch", True)
+test_sentence("der fleißige Schüler liest", True)
+test_sentence("der Schüler schreibt und macht und erklärt", True)
+test_sentence("die Lehrerin ist in dem Klassenzimmer", True)
+test_sentence("der Schüler schreibt in das Klassenzimmer", True)
 
-Implement a tester for your grammar using a natural language toolkit or library such as nltk in python,
-You can choose a substitute but you should schedule an appointment to make sure I can run it before the hand-in.
-If I can't compile/run it, you will get 0 as a grade.
-Implement and document a set of tests that show both: strings that should be accepted by the grammar and strings that shouldn't.
+# Sentences that SHOULD be rejected  
+print("\n=== INVALID SENTENCES ===")
+test_sentence("Schüler der schreibt", False)
+test_sentence("der Schüler und", False)
+test_sentence("und der Schüler schreibt", False)
+test_sentence("der Schüler Schüler", False)
+
 Test documentation should include examples of the pushdown automata or LL1 parsing for the grammar and a specific string.
+
 ### Analysis.
 
 #### Chomsky's Hierarchy before elimination of Ambiguity and LR
-
+Before transforming the grammar, it is a CFG (Context-Free Grammar) in Chomsky's Hierarchy.
+Reasons:
+- Each production rule has one non-terminal on the left
+- Right-hand can be terminal or non-terminal
+- Affect parsing by ambiguity and left recursion
 #### Chomsky's Hierarchy after elimination of Ambiguity and LR
+After transforming the grammar, it is still a CFG but has an efficiency in parsing and LL(1)-style.
+Reasons:
+- The grammar became more efficient for parsing.
+- Left recursion eliminated
+- Ambiguity eliminated by the cases shown previously.
 #### Time implications
-Explain the time implications of the different levels and provide a brief example of a string of each level
+Through the LL(1) parsing made by the program, the time complexity for this grammar is considered as O(n). Although type 2 grammars, often represent a time complexity in the worst case of O(n^3), when a ambiguos sentence is presented, several trees can be develop. That is why even though my Grammar is a type 2 grammar, it follows a O(n) because of the elimination of ambiguity.
 #### References 
 - Klein, A. (2025, March 22). Mastering German Word Order: An Absolute Beginner’s Guide. LearnOutLive. https://learnoutlive.com/german-word-order-guide-for-beginners/
 
