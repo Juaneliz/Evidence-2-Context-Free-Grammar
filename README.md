@@ -162,6 +162,24 @@ Reasons:
 - Left recursion eliminated
 - Ambiguity eliminated by the cases shown previously.
 #### Time implications
+
+The parser processes the input sentence through tokens. Being that n is the number of tokens.
+In the best case, the time complexity is O(n).
+-der Schüler schreibt
+In this case, the parser only needs to match a basic sentence structure
+S->Np VP
+So the number of operations grows linearly with the number of tokens.
+<br>
+Average-case Scenario O(n)
+The average case occurs when the sentence includes common structures like adjectives.
+-die Lehrerin erklärt das Buch
+Since the corrected grammar removes direct left recursion and ambiguity, the parser develops the sentence in an efficient way. This is by analyzing the tokens accordingly to the grammar.
+
+Worst-case scenario: O(n^2)
+Worst case occurs when the sentence contains several conjunctions or nested noun phrases
+-der Schüler und die Lehrerin schreibt und macht in dem Klassenzimmer.
+Even though, the ambiguity does not exist anymore, by having several conjunctions and nested nouns; the parser will try to develop the sentence in several paths. By using this scenario, the complexity might be higher depending on the parsing algorithm.
+
 Through the LL(1) parsing made by the program, the time complexity for this grammar is considered as O(n). Although type 2 grammars, often represent a time complexity in the worst case of O(n^3), when a ambiguos sentence is presented, several trees can be develop. That is why even though my Grammar is a type 2 grammar, it follows a O(n) because of the elimination of ambiguity.
 #### References 
 - Klein, A. (2025, March 22). Mastering German Word Order: An Absolute Beginner’s Guide. LearnOutLive. https://learnoutlive.com/german-word-order-guide-for-beginners/
