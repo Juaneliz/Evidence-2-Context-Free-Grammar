@@ -103,11 +103,11 @@ Imagen solucion VP
 #### Correct grammar
 ```python
 S -> NP VP
-NP -> Det Nom NP2
-NP2 -> Conj NP NP2 | ε
+NP -> Det Nom NP'
+NP' -> Conj NP NP' | ε
 Nom -> Adj Nom | N
-VP -> V VP2 | V PP VP2 | V NP VP2 | V NP PP VP2
-VP2 -> Conj VP VP2 | ε
+VP -> V VP' | V PP VP' | V NP VP' | V NP PP VP'
+VP' -> Conj VP VP' | ε
 PP -> Prep NP
 Det -> 'der' | 'die' | 'das' | 'ein' | 'eine' | 'dem'
 Adj -> 'fleißige' | 'kleine' | 'schwere' | 'neue' | 'intelligent' | 'interessant' | 'alt'
